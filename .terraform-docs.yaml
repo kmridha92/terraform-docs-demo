@@ -1,0 +1,52 @@
+version: ""
+
+formatter: "markdown"
+
+header-from: "doc/header.md"
+footer-from: "doc/footer.md"
+
+
+sections:
+  show:
+    - header
+    - requirements
+    - data-sources
+    - providers
+    - modules
+    - inputs
+    - outputs
+    - footer
+
+content: |-
+
+  {{ include "doc/template.md" }}
+
+  {{ .Header }}
+
+  {{ .Requirements }}
+
+  {{ .Providers }}
+
+  {{ .Modules }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+  {{ .Footer }}
+
+output:
+  file: "README.md"
+  mode: inject
+  template: |-
+    <!-- BEGINS_TF_DOCS -->
+    {{ .Content }}
+    <!-- END_TF_DOCS -->
+
+output-values:
+  enabled: false
+  from: ""
+
+sort:
+  enabled: true
+  by: required
