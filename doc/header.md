@@ -23,7 +23,7 @@ The deployment in prd is a manual trigger.
 Important notes
 ```
 * No direct pushes to main branch
-* checked out branch name should always start with feature or bugfix
+* checked out branch name should always start with feature or bugfix or test
 ```
 
 ### `How to use`
